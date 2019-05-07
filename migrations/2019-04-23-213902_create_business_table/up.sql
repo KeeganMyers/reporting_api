@@ -1,0 +1,4 @@
+CREATE TABLE business (
+  id TEXT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+)
