@@ -45,8 +45,7 @@ already be present on the system I have been running postgres inside docker
 .env file
 
 - Setup the DB and run the migrations
-``` diesel setup
-   diesel migration run ```
+``` diesel setup; diesel migration run ```
 
 - Compile the project
 ``` cargo build --release ```
