@@ -28,31 +28,31 @@ following query parameters:
 # Installation
 
 - Install rust
- ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
+ ``` curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh ```
 
 - Install diesel to interact with the DB
-  ```cargo install diesel_cli```
+  ``` cargo install diesel_cli ```
 
 - In order to limit dependencies and avoid impacting other databases that may
 already be present on the system I have been running postgres inside docker
 
 - Create the host directory
-```mkdir data```
+``` mkdir data ```
 - Start the container
-```docker run --name postgres -v $(pwd)/data:/var/lib/postgresql/data -p 5532:5432 -d postgres:9.4-alpine```
+``` docker run --name postgres -v $(pwd)/data:/var/lib/postgresql/data -p 5532:5432 -d postgres:9.4-alpine ```
 
 - If you would prefer to host postgres elsewhere please change DATABASE_URL in the
 .env file
 
 - Setup the DB and run the migrations
-```diesel setup
-   diesel migration run```
+``` diesel setup
+   diesel migration run ```
 
 - Compile the project
-```cargo build --release```
+``` cargo build --release ```
 
 - Run the server
-```target/release/reporting_api```
+``` target/release/reporting_api ```
 
 - Import  Records from the target POS system
- ```curl -X POST 127.0.0.1:8088/import```
+ ``` curl -X POST 127.0.0.1:8088/import ```
